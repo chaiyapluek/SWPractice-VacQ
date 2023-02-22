@@ -40,6 +40,7 @@ exports.getHospital = (req, res, next)=>{
 //@route    POST /api/v1/hospitals
 //@access   private
 exports.createHospital = (req, res, next)=>{
+    console.log("create a new hospital");
     console.log(req.body);
     Hospital.create(req.body)
     .then(data=>{
