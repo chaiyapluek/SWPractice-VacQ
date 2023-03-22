@@ -8,9 +8,12 @@ const {
 	getHospitals,
 	updateHospital,
 } = require("../controllers/hospitals");
-const appointmentRouter = require('./appointment');
+const appointmentRouter = require("./appointment");
+const { getVacCenters } = require("../controllers/hospitals");
 
 router.use("/:hospitalId/appointments", appointmentRouter);
+
+router.route("/vacCenters").get(getVacCenters);
 
 router
 	.route("/:id")
